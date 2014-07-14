@@ -1,0 +1,17 @@
+<apex:page showHeader="true" sidebar="true" docType="HTML-5.0">
+	<apex:includeScript value="{!URLFOR($Resource.efLibs,'jquery/jquery-2.1.1.min.js')}" /> 
+	<apex:includeScript value="{!URLFOR($Resource.efLibs,'angular/angular.min.js')}" /> 
+	<apex:includeScript value="{!URLFOR($Resource.efLibs,'bootstrap1/js/bootstrap.min.js')}" />
+
+	<apex:includeScript value="{!URLFOR($Resource.efMainCTRL)}" />
+
+	<apex:stylesheet value="{!URLFOR($Resource.efLibs,'bootstrap1/css/bootstrap.min.css')}"/>
+
+	<div class="container" ng-app="eventflex">
+		<div class="" ng-controller="MainCTRL">
+			{{test}}
+		</div>
+	</div>
+
+
+</apex:page>

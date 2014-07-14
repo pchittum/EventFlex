@@ -1,0 +1,167 @@
+<apex:component >
+    <apex:attribute name="tweets" type="Tweet[]" description="List of tweets"/>
+
+    <style type="text/css">
+        .twitter-feed-container{
+            height: 500px;
+            position: relative;
+            width: 500px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            display: block;
+            font-size: 14px;
+        }
+
+        .twitter-feed-container .twitter-feed{
+            padding: 0;
+            margin: 0;
+            font-family: "Helvetica Neue";
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .twitter-feed-container .twitter-post{
+            position: relative;
+            border: 1px solid #e8e8e8;
+            padding: 4px;
+            min-height: 56px;
+        }
+
+        .twitter-feed-container .twitter-post .media{
+            position: relative;
+            padding-left: 56px;
+            padding-top: 10px;
+        }
+
+        .twitter-feed-container .twitter-post .media img {
+            width: 390px;
+        }
+
+        .twitter-feed-container .twitter-post .header{
+            position: relative;
+            padding-left: 56px;
+        }
+
+        .twitter-feed-container .twitter-post .header a{
+            text-decoration: none;
+        }
+
+        .twitter-feed-container .twitter-post .footer{
+          position: relative;
+          padding-left: 56px;
+        }
+
+        .twitter-feed-container .twitter-post .avatar{
+          position: absolute;
+          top: 0;
+          left: 0px;  
+          width: 48px;
+          height: 48px;
+          background: #fff;
+          border-radius: 4px;
+        }
+
+        .twitter-feed-container .twitter-post .secondary{
+          color: #707070;
+          font-size: 12px;
+        }
+
+        .twitter-feed-container .twitter-post .twitter-post-timestamp{
+          position:absolute;
+          right: 4px;
+        }
+
+        .twitter-feed-container .twitter-post .content{
+          position: relative;
+          padding-left: 56px;
+        }
+
+        .twitter-feed-container .twitter-post .author{
+          font-weight: bold;
+        }
+    </style>
+
+    <div class="twitter-feed-container">
+        <ul id="twitterFeed" class="twitter-feed">
+            <apex:repeat value="{!tweets}" var="tweet">
+                <li class="twitter-post">
+                    <div class="header">
+                        <img class="avatar" alt="" src="{!tweet.user.profile_image_url_https}"/>
+                        <a class="author" href="https://twitter.com/{!tweet.user.screen_name}">{!tweet.user.name}</a>
+                        <a class="handle secondary" href="https://twitter.com/{!tweet.user.screen_name}">@{!tweet.user.screen_name}</a>
+                        <a class="twitter-post-timestamp secondary">{!tweet.created_at}</a>
+                    </div>
+          
+                    <div class="content">
+                        <span class="text">
+                            {!tweet.text}
+                        </span>
+                    </div>
+          
+                    <div class="footer"></div>
+                    
+                    <apex:outputPanel rendered="{!(tweet.entities!=null)&&(tweet.entities.media!=null)}">
+                        <div class="media">
+                            <apex:repeat value="{!tweet.entities.media}" var="mediaItem">
+                                <apex:outputPanel rendered="{!mediaItem.type=='photo'}">
+                                    <a href="{!mediaItem.expanded_url}" target="_blank">
+                                        <img src="{!mediaItem.media_url_https}" alt="View Image on Twitter"/>
+                                    </a>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                        </div>
+                    </apex:outputPanel>
+                </li>
+            </apex:repeat>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var SimpleTweetFeed = {
+            prettyDate: function(time){
+                var date = new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
+                    diff = (((new Date()).getTime() - date.getTime()) / 1000),
+                    day_diff = Math.floor(diff / 86400);
+                        
+                if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+                    return;
+                        
+                return day_diff == 0 && (
+                        diff < 60 && "just now" ||
+                        diff < 120 && "1 minute ago" ||
+                        diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+                        diff < 7200 && "1 hour ago" ||
+                        diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+                    day_diff == 1 && "Yesterday" ||
+                    day_diff < 7 && day_diff + " days ago" ||
+                    day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+            },
+
+            setPrettyDates: function() {
+                var feed = document.getElementById('twitterFeed');
+
+                // if getElementsByClassName is supported, use it
+                if ( document.getElementsByClassName ) {
+                    var elems = feed.getElementsByClassName('twitter-post-timestamp');
+                    for (i in elems) {
+                        elems[i].innerHTML = this.prettyDate(elems[i].innerHTML);
+                    }
+                }
+                // otherwise, we'll take a less optimal approach
+                else{                   
+                    var elems = feed.getElementsByTagName('*'), i;
+                    for (i in elems) {
+                        if((' ' + elems[i].className + ' ').indexOf(' twitter-post-timestamp ')
+                                > -1) {
+                            elems[i].innerHTML = this.prettyDate(elems[i].innerHTML);
+                        }
+                    }
+                }
+            }
+        }
+        
+        // convert the raw dates into pretty formats ('12-13-2014 12:00:00' -> '12 hours ago')
+        SimpleTweetFeed.setPrettyDates();
+    </script>
+    
+</apex:component>
