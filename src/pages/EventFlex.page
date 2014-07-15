@@ -49,10 +49,7 @@
 		var staticItems = {'ganttTemplate' : "{!URLFOR($Resource.efLibs,'angular-gantt/template/gantt.tmpl.html')}"};
 	</script>
 	<div class="container" ng-app="eventflex">
-		<div ng-view="#" class="slide">
-			{{test}}
-			{{sessionId}}
-		</div>
+		<div ng-view="#" class="slide"></div>
 		
 	</div>
 

@@ -6,3 +6,7 @@
 <gantt template-url="staticItems[ganttTemplate]" data="ganttData"></gantt>
 
 <a href="#/">Go Back</a>
+<div>
+	{{test}}
+	{{sessionId}}
+</div>
