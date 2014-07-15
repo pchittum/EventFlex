@@ -1,0 +1,925 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "consumerKey", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 26
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "consumerSecret", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 27
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "callbackUrl", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 28
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "accessToken", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 29
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "accessTokenSecret", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 30
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "POST_STATUS_COMMAND", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 33
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "SEARCH_COMMAND", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 34
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "POST_TRANSACTION", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 37
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "GET_TRANSACTION", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 32, 
+                "line": 38
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "DEBUG_MODE", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 41
+            }, 
+            "type": "Boolean"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [
+        {
+            "properties": [
+                {
+                    "modifiers": [], 
+                    "name": "statuses", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 28, 
+                        "line": 227
+                    }, 
+                    "type": "LIST"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [], 
+                    "name": "TwitterSearchResponse", 
+                    "parameters": [], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 228
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "TwitterSearchResponse", 
+            "tableDeclaration": {
+                "type": "TwitterSearchResponse", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 18, 
+                    "line": 226
+                }, 
+                "name": "TwitterSearchResponse"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }, 
+        {
+            "properties": [], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [], 
+            "namespace": null, 
+            "name": "TwitterResponseException", 
+            "tableDeclaration": {
+                "type": "TwitterResponseException", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 18, 
+                    "line": 233
+                }, 
+                "name": "TwitterResponseException"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }
+    ], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "SimpleTweet", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 67
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "SimpleTweet", 
+    "tableDeclaration": {
+        "type": "SimpleTweet", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 23
+        }, 
+        "name": "SimpleTweet"
+    }, 
+    "key": "01p20000002pLA5", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 75
+            }, 
+            "name": "newTweet"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 76
+            }, 
+            "name": "body"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 78
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "HttpResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 79
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 57, 
+                "line": 91
+            }, 
+            "name": "searchTerm"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 77, 
+                "line": 91
+            }, 
+            "name": "count"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 92
+            }, 
+            "name": "encodedSearch"
+        }, 
+        {
+            "type": "PageReference", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 95
+            }, 
+            "name": "urlBuilder"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 100
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "HttpResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 101
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "TwitterSearchResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 103
+            }, 
+            "name": "searchResponse"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 110
+            }, 
+            "name": "JSONString"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 54, 
+                "line": 116
+            }, 
+            "name": "requestUrl"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 117
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 55, 
+                "line": 125
+            }, 
+            "name": "requestUrl"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 80, 
+                "line": 125
+            }, 
+            "name": "body"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 126
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 47, 
+                "line": 135
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 137
+            }, 
+            "name": "nonce"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 138
+            }, 
+            "name": "timestamp"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 140
+            }, 
+            "name": "parameters"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 151
+            }, 
+            "name": "baseString"
+        }, 
+        {
+            "type": "Blob", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 152
+            }, 
+            "name": "sig"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 155
+            }, 
+            "name": "signature"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 157
+            }, 
+            "name": "header"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 158
+            }, 
+            "name": "key"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 50, 
+                "line": 165
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "Http", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 166
+            }, 
+            "name": "http"
+        }, 
+        {
+            "type": "HttpResponse", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 167
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 46, 
+                "line": 50
+            }, 
+            "name": "newTweet"
+        }, 
+        {
+            "type": "SimpleTweet", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 51
+            }, 
+            "name": "simpleTweetSender"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 61, 
+                "line": 62
+            }, 
+            "name": "searchTerm"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 87, 
+                "line": 62
+            }, 
+            "name": "count"
+        }, 
+        {
+            "type": "SimpleTweet", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 63
+            }, 
+            "name": "simpleTweet"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 63, 
+                "line": 176
+            }, 
+            "name": "oauthParams"
+        }, 
+        {
+            "type": "HttpRequest", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 88, 
+                "line": 176
+            }, 
+            "name": "request"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 177
+            }, 
+            "name": "parameters"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 184
+            }, 
+            "name": "host"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 185
+            }, 
+            "name": "numParams"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 191
+            }, 
+            "name": "keys"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 194
+            }, 
+            "name": "paramString"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 195
+            }, 
+            "name": "i"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 65, 
+                "line": 206
+            }, 
+            "name": "value"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 207
+            }, 
+            "name": "res"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 211
+            }, 
+            "name": "param"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 212
+            }, 
+            "name": "keyValue"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 217
+            }, 
+            "name": "encName"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 218
+            }, 
+            "name": "encValue"
+        }
+    ], 
+    "id": "01p20000002pLA5", 
+    "methods": [
+        {
+            "modifiers": [], 
+            "name": "send", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "newTweet"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 75
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "searchFor", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "searchTerm"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "count"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 34, 
+                "line": 91
+            }, 
+            "returnType": "TwitterSearchResponse", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "buildGetRequest", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "requestUrl"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 116
+            }, 
+            "returnType": "HttpRequest", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "buildPostRequest", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "requestUrl"
+                }, 
+                {
+                    "type": "String", 
+                    "name": "body"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 125
+            }, 
+            "returnType": "HttpRequest", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "setAuthorization", 
+            "parameters": [
+                {
+                    "type": "HttpRequest", 
+                    "name": "request"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 135
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "sendRequest", 
+            "parameters": [
+                {
+                    "type": "HttpRequest", 
+                    "name": "request"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 165
+            }, 
+            "returnType": "HttpResponse", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "tweet", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "newTweet"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 50
+            }, 
+            "returnType": "Boolean", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "search", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "searchTerm"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "count"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 41, 
+                "line": 62
+            }, 
+            "returnType": "TwitterSearchResponse", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "createBaseString", 
+            "parameters": [
+                {
+                    "type": "Map", 
+                    "name": "oauthParams"
+                }, 
+                {
+                    "type": "HttpRequest", 
+                    "name": "request"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 27, 
+                "line": 176
+            }, 
+            "returnType": "String", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "getUrlParams", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "value"
+                }
+            ], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 39, 
+                "line": 206
+            }, 
+            "returnType": "Map", 
+            "type": null
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+{
+    "properties": [
+        {
+            "modifiers": [], 
+            "name": "newTweet", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 2
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "result", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 3
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "searchResponse", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 46, 
+                "line": 4
+            }, 
+            "type": "TwitterSearchResponse"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "twitterSearch", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 5
+            }, 
+            "type": "String"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "TwitterPostController", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 7
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "TwitterPostController", 
+    "tableDeclaration": {
+        "type": "TwitterPostController", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "TwitterPostController"
+    }, 
+    "key": "01p20000002pLBc", 
+    "variables": [], 
+    "id": "01p20000002pLBc", 
+    "methods": [
+        {
+            "modifiers": [], 
+            "name": "postTweet", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 11
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [], 
+            "name": "search", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 18
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

@@ -1,0 +1,347 @@
+{
+    "properties": [
+        {
+            "modifiers": [], 
+            "name": "created_at", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 8
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "id_str", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 9
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "text", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 10
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "retweeted", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 11
+            }, 
+            "type": "Boolean"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "user", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 12
+            }, 
+            "type": "TwitterUser"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "entities", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 13
+            }, 
+            "type": "TwitterEntities"
+        }, 
+        {
+            "modifiers": [], 
+            "name": "retweeted_status", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 14
+            }, 
+            "type": "Tweet"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [
+        {
+            "properties": [
+                {
+                    "modifiers": [], 
+                    "name": "name", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 19
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "profile_image_url", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 20
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "profile_image_url_https", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 21
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "id", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 22
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "screen_name", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 23
+                    }, 
+                    "type": "String"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [], 
+                    "name": "TwitterUser", 
+                    "parameters": [], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 25
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "TwitterUser", 
+            "tableDeclaration": {
+                "type": "TwitterUser", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 18, 
+                    "line": 18
+                }, 
+                "name": "TwitterUser"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }, 
+        {
+            "properties": [
+                {
+                    "modifiers": [], 
+                    "name": "media", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 35, 
+                        "line": 29
+                    }, 
+                    "type": "LIST"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [], 
+                    "name": "TwitterEntities", 
+                    "parameters": [], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 31
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "TwitterEntities", 
+            "tableDeclaration": {
+                "type": "TwitterEntities", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 18, 
+                    "line": 28
+                }, 
+                "name": "TwitterEntities"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }, 
+        {
+            "properties": [
+                {
+                    "modifiers": [], 
+                    "name": "id", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 35
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "media_url", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 36
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "media_url_https", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 37
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "type", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 38
+                    }, 
+                    "type": "String"
+                }, 
+                {
+                    "modifiers": [], 
+                    "name": "expanded_url", 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 23, 
+                        "line": 39
+                    }, 
+                    "type": "String"
+                }
+            ], 
+            "externalReferences": [], 
+            "innerClasses": [], 
+            "interfaces": [], 
+            "constructors": [
+                {
+                    "modifiers": [], 
+                    "name": "TwitterMedia", 
+                    "parameters": [], 
+                    "visibility": "PUBLIC", 
+                    "references": [], 
+                    "location": {
+                        "column": 16, 
+                        "line": 41
+                    }, 
+                    "type": null
+                }
+            ], 
+            "namespace": null, 
+            "name": "TwitterMedia", 
+            "tableDeclaration": {
+                "type": "TwitterMedia", 
+                "modifiers": [], 
+                "references": [], 
+                "location": {
+                    "column": 18, 
+                    "line": 34
+                }, 
+                "name": "TwitterMedia"
+            }, 
+            "key": null, 
+            "variables": [], 
+            "id": null, 
+            "methods": []
+        }
+    ], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [], 
+            "name": "Tweet", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 16
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "Tweet", 
+    "tableDeclaration": {
+        "type": "Tweet", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 6
+        }, 
+        "name": "Tweet"
+    }, 
+    "key": "01p20000002pLA0", 
+    "variables": [], 
+    "id": "01p20000002pLA0", 
+    "methods": []
+}
