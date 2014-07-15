@@ -9,4 +9,5 @@
 <div>
 	{{test}}
 	{{sessionId}}
+	blah
 </div>

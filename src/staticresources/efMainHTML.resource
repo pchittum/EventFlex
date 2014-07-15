@@ -6,4 +6,5 @@
 <div>
 	{{test}}
 	{{sessionId}}
+	whatever
 </div>
