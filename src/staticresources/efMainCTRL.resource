@@ -3,6 +3,7 @@ eventFlex.controller('MainCTRL', ['$scope', 'efSERVICES', '$routeParams', functi
   $scope.test = '¡Hola, amigo!';
   $scope.events = [];
   $scope.isLoading = false;
+  $scope.modalShown = false;
 
   $scope.loadData = function(){
     if($scope.events.length > 0){
@@ -23,6 +24,10 @@ eventFlex.controller('MainCTRL', ['$scope', 'efSERVICES', '$routeParams', functi
     
     $scope.loadData();
   }
+
+  $scope.toggleModal = function(){
+    $scope.modalShown = !$scope.modalShown;
+  };
 
   $scope.init();
 

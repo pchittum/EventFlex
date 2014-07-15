@@ -1,4 +1,4 @@
-var eventFlex = angular.module('eventflex', ['ngRoute', 'ngAnimate']);
+var eventFlex = angular.module('eventflex', ['ngRoute', 'ngAnimate', 'gantt']);
 
 // configure our routes
 eventFlex.config(function($routeProvider) {
