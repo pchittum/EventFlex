@@ -9,7 +9,6 @@
         <label>Consumer key</label>
         <length>225</length>
         <required>false</required>
-        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -19,7 +18,6 @@
         <label>Consumer secret</label>
         <length>255</length>
         <required>false</required>
-        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>

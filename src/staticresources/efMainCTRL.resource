@@ -4,6 +4,7 @@ eventFlex.controller('MainCTRL', ['$scope', 'efSERVICES', '$routeParams', functi
   $scope.events = [];
   $scope.isLoading = false;
   $scope.modalShown = false;
+  
 
   $scope.loadData = function(){
     if($scope.events.length > 0){
@@ -34,30 +35,143 @@ eventFlex.controller('MainCTRL', ['$scope', 'efSERVICES', '$routeParams', functi
 
 }]);
 
+eventFlex.controller('SessionModalCTRL', ['$scope', 'efSERVICES', '$routeParams', function($scope, efSERVICES, $routeParams){
+  $scope.test = 'MODAL YAHHH';
+
+}]);
+
 eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', function($scope, efSERVICES, $routeParams) {
   $scope.eventId = $routeParams.id;
   $scope.sessions = [];
+  $scope.sessionData = [];
+  $scope.sessionTopicData = {};
+  $scope.sessionSpeakerData = {};
+
+
   $scope.isLoading = false;
+  $scope.gData = [];
+  $scope.groupByOptions = [{'Label' : 'Location', 'isArr':false, 'Property':'Location_text__c'}, {'Label' : 'Speaker', 'isArr' : true, 'ArrName':'Speakers', 'Property' : 'Speaker_Name__c'}, {'Label' : 'Topics', 'isArr' : true, 'ArrName':'Topics', 'Property' : 'Name'}];
+  $scope.groupBy = {};
+
+  $scope.modalURL = staticItems['efSessionModalHTML'];
 
   $scope.test = 'Adios, muchacho!';
+
+  $scope.templateURL =  staticItems['ganttTemplate'];
+  $scope.modalShown = false;
+
+
+ 
+
+  $scope.refreshGrid = function(groupBy){
+    $scope.groupBy = groupBy;
+
+    if(groupBy.isArr){
+      $scope.sessions = efSERVICES.groupDataByArray($scope.sessionData, $scope.groupBy.ArrName, $scope.groupBy.Property);
+    }else{
+      $scope.sessions = efSERVICES.groupDataByProperty($scope.sessionData, $scope.groupBy.Property);
+    }
+
+    $scope.getGanttData();
+  }
+
+
+  $scope.processData = function(){
+      
+      $scope.sessionData = efSERVICES.enhanceData($scope.sessionData, $scope.sessionSpeakerData, 'Speakers');
+      $scope.sessionData = efSERVICES.enhanceData($scope.sessionData, $scope.sessionTopicData,'Topics');
+
+      console.debug($scope.sessionData);
+
+      $scope.refreshGrid($scope.groupByOptions[0]);
+
+      $scope.isLoading = false;
+      
+      
+
+
+
+      $scope.$apply($scope.sessionData);
+      $scope.$apply($scope.sessions);
+      $scope.$apply($scope.isLoading);
+
+  }
+
+  $scope.getSessionData = function(sessionId){
+    for(var i=0; i<$scope.sessionData.length; i++){
+      if($scope.sessionData[i]._props.Id == sessionId){
+        return $scope.sessionData[i];
+      }
+    }
+  }
 
   $scope.loadData = function(){
       $scope.isLoading = true;
       
+
       efSERVICES.getSessionsForEvent($scope.eventId, function(data){
-        $scope.sessions = data;
-        $scope.isLoading = false;
-        $scope.$apply($scope.sessions);
-        $scope.$apply($scope.isLoading);
+        $scope.sessionData = data;
+
+        efSERVICES.getSessionSpeakers($scope.eventId, function(dataS){
+          $scope.sessionSpeakerData = dataS;
+
+          efSERVICES.getSessionTopics($scope.eventId, function(dataT){
+            $scope.sessionTopicData = dataT;
+            
+            $scope.processData();
+
+          });
+        
+      });
+
+        
+
+       
       });
   }
+
+  $scope.getGanttData = function(){
+    var i = 0;
+    $scope.gData = [];
+    angular.forEach($scope.sessions, function(gevt){
+
+      var tempEvt = {'id':gevt.key, 'order':i, 'description' : gevt.key, 'tasks' : []};
+      
+      for(var x=0; x<gevt.data.length; x++){
+          var evt = gevt.data[x];
+
+          tempEvt.tasks.push({'id' : evt._props.Id, 'subject' : evt._props.Name,  "color": "#F1C232", 'from' : new Date(evt._props.Start_date_time__c), 'to' : new Date(evt._props.End_date_time__c)});
+      };
+
+      $scope.gData.push(tempEvt);
+      
+      i++;
+    });
+
+
+    $scope.clearGanttData();
+
+    $scope.loadGanttData($scope.gData);
+
+    
+
+  }
+
+  $scope.viewSession = function(evtId){
+
+    $scope.sessionDetails = $scope.getSessionData(evtId);
+
+    console.debug($scope.sessionDetails);
+   
+    $scope.modalShown = !$scope.modalShown;
+    
+  };
 
   $scope.init = function(){
     $scope.loadData();
   }
 
-  $scope.loadData();
-
+ 
 
   $scope.ganttData = {"data1": [
             // Order is optional. If not specified it will be assigned automatically
@@ -118,6 +232,70 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
                 {"id": "edf2cece-2d17-436f-bead-691edbc7386b", "subject": "Technical/User documentation", "color": "#F1C232", "from": new Date(2013,10,26,8,0,0), "to": new Date(2013,10,28,18,0,0)}
             ]}
         ]};
+
+      $scope.mode = "date";
+    $scope.maxHeight = 0;
+    $scope.showWeekends = true;
+    $scope.showNonWorkHours = false;
+
+    $scope.scale = 'hour';
+
+   // $scope.loadGanttData = function(){
+    //  return $scope.ganttData.data1;
+    //}
+
+    $scope.addSamples = function () {
+        $scope.loadData();
+        //$scope.loadGanttData($scope.ganttData.data1);
+    };
+
+    $scope.removeSomeSamples = function () {
+        $scope.removeData([
+            {"id": "c65c2672-445d-4297-a7f2-30de241b3145"}, // Remove all Kickoff meetings
+            {"id": "2f85dbeb-0845-404e-934e-218bf39750c0", "tasks": [
+                {"id": "f55549b5-e449-4b0c-9f4b-8b33381f7d76"},
+                {"id": "5e997eb3-4311-46b1-a1b4-7e8663ea8b0b"},
+                {"id": "6fdfd775-7b22-42ec-a12c-21a64c9e7a9e"}
+            ]}, // Remove some Milestones
+            {"id": "cfb29cd5-1737-4027-9778-bb3058fbed9c", "tasks": [
+                {"id": "57638ba3-dfff-476d-ab9a-30fda1e44b50"}
+            ]} // Remove order basket from Sprint 2
+        ]);
+    };
+
+    $scope.removeSamples = function () {
+        $scope.clearData();
+    };
+
+    $scope.labelEvent = function(event) {
+        // A label has been clicked.
+        console.log('Label event (by user: ' + event.userTriggered + '): ' + event.row.description + ' (Custom data: ' + event.row.data + ')');
+    };
+
+    $scope.labelHeaderEvent = function(event) {
+        // The label header has been clicked.
+        console.log('Label header event. Mouse: ' + event.evt.clientX + '/' + event.evt.clientY);
+    };
+
+    $scope.rowEvent = function(event) {
+        // A row has been added, updated or clicked. Use this event to save back the updated row e.g. after a user re-ordered it.
+        console.log('Row event (by user: ' + event.userTriggered + '): ' + event.date + ' '  + event.row.description + ' (Custom data: ' + event.row.data + ')');
+    };
+
+    $scope.scrollEvent = function(event) {
+        if (angular.equals(event.direction, "left")) {
+            // Raised if the user scrolled to the left side of the Gantt. Use this event to load more data.
+            console.log('Scroll event: Left');
+        } else if (angular.equals(event.direction, "right")) {
+            // Raised if the user scrolled to the right side of the Gantt. Use this event to load more data.
+            console.log('Scroll event: Right');
+        }
+    };
+
+    $scope.taskEvent = function(event) {
+        // A task has been updated or clicked.
+        $scope.viewSession(event.task.id);
+    };
 
 }]);
 

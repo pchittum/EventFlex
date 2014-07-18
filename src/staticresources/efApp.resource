@@ -6,19 +6,18 @@ eventFlex.config(function($routeProvider) {
 
       // route for the home page
       .when('/', {
-        templateUrl : '/resource/1405332906000/efMainHTML',
+        templateUrl : staticItems['efMainHTML'],
         controller  : 'MainCTRL'
       })
 
       // route for the about page
       .when('/session/:id', {
-        templateUrl : '/resource/1405341529000/efSessionHTML',
+        templateUrl :  staticItems['efSessionHTML'],
         controller  : 'SessionCTRL'
       })
 
-      // route for the contact page
-      .when('/contact', {
-        templateUrl : 'pages/contact.html',
-        controller  : 'contactController'
-      });
+      .when('/session/m/:id', {
+        templateUrl :  staticItems['efSessionModalHTML'],
+        controller  : 'SessionModalCTRL'
+      })
   });

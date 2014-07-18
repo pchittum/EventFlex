@@ -1,4 +1,4 @@
-<apex:page showHeader="false" sidebar="false" docType="HTML-5.0" standardStylesheets="false" standardController="Event__c">
+<apex:page showHeader="false" sidebar="false" docType="HTML-5.0" standardStylesheets="false" controller="EventFlexServices">
 	<apex:remoteObjects >
  		<apex:remoteObjectModel name="Event__c" jsShorthand="evt" fields="Name,Id,OwnerId,Short_description__c, Start_date_time__c, End_date_time__c,Status__c,Venue_text__c, Twitter_User__c"/>
  		<apex:remoteObjectModel name="Session__c" jsShorthand="session" fields="Name,Id,Location_text__c, Start_date_time__c,End_date_time__c,Event__c"/>
@@ -9,6 +9,23 @@
 	<apex:includeScript value="{!URLFOR($Resource.efLibs,'angular/angular-animate.min.js')}" /> 
 	<apex:includeScript value="{!URLFOR($Resource.efLibs,'bootstrap1/js/bootstrap.min.js')}" />
 	
+	
+
+	<script>
+		var staticItems = {
+			'ganttTemplate' : "{!URLFOR($Resource.efLibs,'angular-gantt/template/gantt.tmpl.html')}",
+			'efMainHTML' : "{!URLFOR($Resource.efMainHTML)}",
+			'efSessionHTML' : "{!URLFOR($Resource.efSessionHTML)}",
+			'efProfileHTML' : "{!URLFOR($Resource.efProfileHTML)}",
+			'efModalTemplateHTML' : "{!URLFOR($Resource.efModalTemplateHTML)}",
+			'efSessionModalHTML' : "{!URLFOR($Resource.efSessionModalHTML)}",
+			'getSessionTopics':'{!$RemoteAction.EventFlexServices.getSessionTopics}',
+			'getSessionSpeakers' : '{!$RemoteAction.EventFlexServices.getSessionSpeakers}'
+	};
+
+	console.debug(staticItems);
+	</script>
+
 	<apex:includeScript value="{!URLFOR($Resource.efLibs,'angular-gantt/assets/angular-gantt.min.js')}" />
 
 	<apex:includeScript value="{!URLFOR($Resource.efApp)}" />
@@ -69,7 +86,7 @@
 			  -webkit-transform: translate(-50%, -50%);
 			  -moz-transform: translate(-50%, -50%);
 
-			  background-color: #fff;
+			  background-color:#000000;
 			  box-shadow: 4px 4px 80px #000;
 			}
 		.ng-modal-dialog-content {
@@ -88,9 +105,7 @@
 			  font-family: 'arial', 'sans-serif';
 			}
 	</style>
-	<script>
-		var staticItems = {'ganttTemplate' : "{!URLFOR($Resource.efLibs,'angular-gantt/template/gantt.tmpl.html')}"};
-	</script>
+
 	<div class="container" ng-app="eventflex">
 		<div ng-view="#" class="slide"></div>
 		
