@@ -1,11 +1,11 @@
 <apex:page standardController="Event__c" standardStylesheets="false" docType="html-5.0" showHeader="false" sidebar="false">
 
-	<apex:includeScript value="{!URLFOR($Resource.efLibs,'jquery/jquery-2.1.1.min.js')}" /> 
-	<apex:includeScript value="{!URLFOR($Resource.efLibs,'bootstrap1/js/bootstrap.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.efLibs,'jquery/jquery-2.1.1.min.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.efLibs,'bootstrap1/js/bootstrap.min.js')}" />
 
-	<a class="btn" target="_top" href="/apex/EventFlex">Manage Event</a>
-	<form target="_top" action="/apex/EventFlex">
-		<button type="submit">Manage Event</button>
-	</form>
-	
+    <a class="btn" target="_top" href="/apex/EventFlex">Manage Event</a>
+    <form target="_top" action="/apex/EventFlex">
+        <button type="submit">Manage Event</button>
+    </form>
+    
 </apex:page>
