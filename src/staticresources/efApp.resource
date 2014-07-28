@@ -15,7 +15,6 @@ eventFlex.config(function($routeProvider) {
         templateUrl :  staticItems['efSessionHTML'],
         controller  : 'SessionCTRL'
       })
-
       .when('/session/m/:id', {
         templateUrl :  staticItems['efSessionModalHTML'],
         controller  : 'SessionModalCTRL'

@@ -7,7 +7,7 @@
 <div ng-show="!isLoading">
 <div class="page-header page-header-anchor context-c-triangle">
   <div class="container">
-    <h1>ACME Publishing</h1>
+    <h1>{{eventName}}</h1>
   </div>
 </div>
 <div>

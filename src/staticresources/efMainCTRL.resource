@@ -41,7 +41,9 @@ eventFlex.controller('SessionModalCTRL', ['$scope', 'efSERVICES', '$routeParams'
 }]);
 
 eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', function($scope, efSERVICES, $routeParams) {
+  console.debug("in SessionCTRL");
   $scope.eventId = $routeParams.id;
+  $scope.eventName = '';
   $scope.sessions = [];
   $scope.sessionData = [];
   $scope.sessionTopicData = {};
@@ -73,10 +75,12 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
     }
 
     $scope.getGanttData();
-  }
+  };
 
 
   $scope.processData = function(){
+      console.debug($scope.sessionData);
+      $scope.eventName = $scope.sessionData[0]._props.Name
       
       $scope.sessionData = efSERVICES.enhanceData($scope.sessionData, $scope.sessionSpeakerData, 'Speakers');
       $scope.sessionData = efSERVICES.enhanceData($scope.sessionData, $scope.sessionTopicData,'Topics');
@@ -87,15 +91,11 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
 
       $scope.isLoading = false;
       
-      
-
-
-
       $scope.$apply($scope.sessionData);
       $scope.$apply($scope.sessions);
       $scope.$apply($scope.isLoading);
 
-  }
+  };
 
   $scope.getSessionData = function(sessionId){
     for(var i=0; i<$scope.sessionData.length; i++){
@@ -103,7 +103,7 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
         return $scope.sessionData[i];
       }
     }
-  }
+  };
 
   $scope.loadData = function(){
       $scope.isLoading = true;
@@ -128,7 +128,7 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
 
        
       });
-  }
+  };
 
   $scope.getGanttData = function(){
     var i = 0;
@@ -155,7 +155,7 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
 
     
 
-  }
+  };
 
   $scope.viewSession = function(evtId){
 
@@ -168,8 +168,9 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
   };
 
   $scope.init = function(){
+    console.debug("called init function in gantt page");
     $scope.loadData();
-  }
+  };
 
  
 
@@ -245,6 +246,7 @@ eventFlex.controller('SessionCTRL', ['$scope', 'efSERVICES', '$routeParams', fun
     //}
 
     $scope.addSamples = function () {
+      console.debug('calling init function addSamples');
         $scope.loadData();
         //$scope.loadGanttData($scope.ganttData.data1);
     };
