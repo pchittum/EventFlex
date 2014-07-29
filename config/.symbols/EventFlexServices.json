@@ -1,0 +1,155 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "EventFlexServices", 
+    "tableDeclaration": {
+        "type": "EventFlexServices", 
+        "modifiers": [], 
+        "references": [], 
+        "location": {
+            "column": 27, 
+            "line": 1
+        }, 
+        "name": "EventFlexServices"
+    }, 
+    "key": "01p200000049hWBAAY", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 65, 
+                "line": 3
+            }, 
+            "name": "eventId"
+        }, 
+        {
+            "type": "LIST", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 5
+            }, 
+            "name": "topicAssigments"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 28, 
+                "line": 6
+            }, 
+            "name": "temp"
+        }, 
+        {
+            "type": "TopicAssignment", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 8
+            }, 
+            "name": "ta"
+        }, 
+        {
+            "type": "Topic", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 10, 
+                "line": 9
+            }, 
+            "name": "tt"
+        }, 
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 72, 
+                "line": 22
+            }, 
+            "name": "eventId"
+        }, 
+        {
+            "type": "Map", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 33, 
+                "line": 25
+            }, 
+            "name": "temp"
+        }, 
+        {
+            "type": "Speaker_Slot__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 23, 
+                "line": 27
+            }, 
+            "name": "sl"
+        }, 
+        {
+            "type": "Speaker__c", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 15, 
+                "line": 28
+            }, 
+            "name": "s"
+        }
+    ], 
+    "id": "01p200000049hWBAAY", 
+    "methods": [
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "getSessionTopics", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "eventId"
+                }
+            ], 
+            "visibility": "GLOBAL", 
+            "references": [], 
+            "location": {
+                "column": 41, 
+                "line": 3
+            }, 
+            "returnType": "Map", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "STATIC"
+            ], 
+            "name": "getSessionSpeakers", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "eventId"
+                }
+            ], 
+            "visibility": "GLOBAL", 
+            "references": [], 
+            "location": {
+                "column": 46, 
+                "line": 22
+            }, 
+            "returnType": "Map", 
+            "type": null
+        }
+    ]
+}

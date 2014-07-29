@@ -1,6 +1,6 @@
-public with sharing class EventFlexServices {
+global with sharing class EventFlexServices {
 	@remoteAction
-	public static Map<String, List<Topic>> getSessionTopics(String eventId){
+	global static Map<String, List<Topic>> getSessionTopics(String eventId){
 
 		List<TopicAssignment> topicAssigments = new List<TopicAssignment>();
 		Map<String, List<Topic>> temp = new Map<String, List<Topic>>();
@@ -19,7 +19,7 @@ public with sharing class EventFlexServices {
 	}
 
 	@remoteAction
-	public static Map<String, List<Speaker__c>> getSessionSpeakers(String eventId){
+	global static Map<String, List<Speaker__c>> getSessionSpeakers(String eventId){
 
 		
 		Map<String, List<Speaker__c>> temp = new Map<String, List<Speaker__c>>();
