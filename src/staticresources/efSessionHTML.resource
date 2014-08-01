@@ -5,9 +5,9 @@
 </style>
 <div ng-show="isLoading">LOADING</div>
 <div ng-show="!isLoading">
-<div class="page-header page-header-anchor context-c-triangle">
-  <div class="container">
-    <h1>{{eventName}}</h1>
+<div class="navbar navbar-inverse">
+  <div class="navbar-header navbar-brand">
+    {{eventName}}
   </div>
 </div>
 <div>
